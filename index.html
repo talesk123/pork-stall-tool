@@ -69,6 +69,1149 @@
       top: 0;
       z-index: 4;
       display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      padding: 8px 0 10px;
+      background: rgba(247, 242, 234, .96);
+      backdrop-filter: blur(10px);
+    }
+
+    .tab {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf8;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin: 14px 0 8px;
+      letter-spacing: 0;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      padding: 11px 12px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(185, 67, 47, .14);
+    }
+
+    input[type="number"] {
+      min-height: 48px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      padding: 10px 13px;
+      font-weight: 850;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn.danger {
+      color: #8b1e12;
+      border-color: #dfb6ab;
+      background: #fff7f4;
+    }
+
+    .btn.small {
+      min-height: 36px;
+      padding: 7px 10px;
+      font-size: 14px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .metric {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 78px;
+    }
+
+    .metric .name {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .metric .value {
+      font-size: 24px;
+      font-weight: 900;
+      margin-top: 4px;
+      word-break: break-word;
+    }
+
+    .metric.full {
+      grid-column: 1 / -1;
+    }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .item,
+    .batch {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .item strong,
+    .batch strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .item span,
+    .batch span,
+    .mini {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .batch {
+      border-left: 5px solid var(--blue);
+    }
+
+    .batch.pay {
+      border-left-color: var(--ok);
+    }
+
+    .batch.open {
+      border-left-color: var(--warn);
+    }
+
+    .batch-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .batch-lines {
+      margin-top: 8px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .line-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      border-top: 1px solid #eee1d4;
+      padding-top: 7px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 8px 0 0;
+    }
+
+    .notice {
+      display: none;
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 16px;
+      z-index: 10;
+      max-width: 680px;
+      margin: 0 auto;
+      background: #231f1b;
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 850;
+    }
+
+    .notice.show {
+      display: block;
+    }
+
+    .status {
+      border-left: 4px solid var(--ok);
+      background: #f5fff9;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #164d33;
+      font-weight: 800;
+    }
+
+    .status.warn {
+      border-left-color: var(--warn);
+      background: #fff9ed;
+      color: #704000;
+    }
+
+    @media (max-width: 420px) {
+      .app {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .tab {
+        font-size: 14px;
+        padding: 7px 2px;
+      }
+
+      .summary,
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+
+      .metric.full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>豬肉攤每日小工具</h1>
+      <div class="today" id="todayText"></div>
+    </header>
+
+    <nav class="tabs" aria-label="功能切換">
+      <button class="tab active" data-tab="stock">庫存</button>
+      <button class="tab" data-tab="meatball">肉圓</button>
+      <button class="tab" data-tab="supplier">中盤</button>
+      <button class="tab" data-tab="announcement">公告</button>
+      <button class="tab" data-tab="settings">設定</button>
+    </nav>
+
+    <section id="stock" class="active">
+      <div class="panel">
+        <h2>目前庫存</h2>
+        <div class="grid2">
+          <div>
+            <label for="stockMeat">肉</label>
+            <input id="stockMeat" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：7">
+          </div>
+          <div>
+            <label for="stockOil">油</label>
+            <input id="stockOil" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：7">
+          </div>
+        </div>
+        <p class="note">只記現在的數字。每天收攤後直接改掉就好。</p>
+        <div class="summary">
+          <div class="metric">
+            <div class="name">肉換算</div>
+            <div class="value" id="meatJin">0斤</div>
+          </div>
+          <div class="metric">
+            <div class="name">油換算</div>
+            <div class="value" id="oilJin">0斤</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="meatball">
+      <div class="panel">
+        <div class="grid2">
+          <div>
+            <label for="orderDate">訂貨日期</label>
+            <input id="orderDate" type="text" placeholder="例：6/25">
+          </div>
+          <div>
+            <label for="orderGroups">組數</label>
+            <input id="orderGroups" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：2">
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <button class="btn primary" id="addOrder">加入訂貨</button>
+        </div>
+
+        <div class="summary">
+          <div class="metric">
+            <div class="name">總組數</div>
+            <div class="value" id="totalGroups">0組</div>
+          </div>
+          <div class="metric">
+            <div class="name">訂貨金額</div>
+            <div class="value" id="grossDue">$0</div>
+          </div>
+          <div class="metric">
+            <div class="name">已收</div>
+            <div class="value" id="paidAmount">$0</div>
+          </div>
+          <div class="metric">
+            <div class="name">目前欠款</div>
+            <div class="value" id="netDue">$0</div>
+          </div>
+        </div>
+        <div id="debtStatus" class="status"></div>
+
+        <h3>收款</h3>
+        <div class="grid2">
+          <div>
+            <label for="payDate">收款日期</label>
+            <input id="payDate" type="text" placeholder="例：6/20">
+          </div>
+          <div>
+            <label for="payAmount">金額</label>
+            <input id="payAmount" inputmode="numeric" type="number" min="0" step="1" placeholder="例：30000">
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <button class="btn primary" id="addPayment">插入收款</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="batch-head">
+          <h2>對帳紀錄</h2>
+          <button class="btn small" id="undoAction" hidden>還原上一步</button>
+        </div>
+        <div id="ledgerList" class="list"></div>
+      </div>
+    </section>
+
+    <section id="supplier">
+      <div class="panel">
+        <h2>中盤</h2>
+        <div class="grid2">
+          <div>
+            <label for="frontLegKg">前腿公斤</label>
+            <input id="frontLegKg" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：20">
+          </div>
+          <div>
+            <label for="oilKg">油公斤</label>
+            <input id="oilKg" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：10">
+          </div>
+          <div>
+            <label for="bellyPieces">五花肉公斤</label>
+            <input id="bellyPieces" inputmode="decimal" type="number" min="0" step="0.5" placeholder="例：5">
+          </div>
+        </div>
+        <div class="summary">
+          <div class="metric">
+            <div class="name">前腿</div>
+            <div class="value" id="frontLegTotal">$0</div>
+          </div>
+          <div class="metric">
+            <div class="name">油</div>
+            <div class="value" id="oilTotal">$0</div>
+          </div>
+          <div class="metric">
+            <div class="name">五花肉</div>
+            <div class="value" id="bellyTotal">$0</div>
+          </div>
+          <div class="metric">
+            <div class="name">合計</div>
+            <div class="value" id="supplierTotal">$0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>簡易計算機</h2>
+        <label for="calcExpression">算式</label>
+        <input id="calcExpression" type="text" inputmode="decimal" placeholder="例：30000-26700 或 2100*4">
+        <div class="summary">
+          <div class="metric">
+            <div class="name">結果</div>
+            <div class="value" id="calcResult">0</div>
+          </div>
+        </div>
+        <p class="note">可用 + - * / 和括號，乘法也可以輸入 x 或 ×。</p>
+      </div>
+    </section>
+
+    <section id="announcement">
+      <div class="panel">
+        <h2>連假公告</h2>
+        <div class="grid2">
+          <div>
+            <label for="holidayName">假期名稱</label>
+            <input id="holidayName" type="text" placeholder="例：端午節">
+          </div>
+          <div>
+            <label for="holidayStart">假期開始</label>
+            <input id="holidayStart" type="text" placeholder="例：6/19">
+          </div>
+          <div>
+            <label for="holidayStartWeek">開始星期</label>
+            <input id="holidayStartWeek" type="text" placeholder="例：週五">
+          </div>
+          <div>
+            <label for="holidayEnd">假期結束</label>
+            <input id="holidayEnd" type="text" placeholder="例：6/25">
+          </div>
+          <div>
+            <label for="holidayDays">共幾天</label>
+            <input id="holidayDays" inputmode="numeric" type="number" min="1" step="1" placeholder="例：7">
+          </div>
+          <div>
+            <label for="holidayEndWeek">結束星期</label>
+            <input id="holidayEndWeek" type="text" placeholder="例：週四">
+          </div>
+          <div>
+            <label for="lastBusiness">最後營業日</label>
+            <input id="lastBusiness" type="text" placeholder="例：6/18">
+          </div>
+          <div>
+            <label for="reopenDate">開始營業日</label>
+            <input id="reopenDate" type="text" placeholder="例：6/26">
+          </div>
+        </div>
+        <textarea id="holidayLine" style="margin-top: 10px;"></textarea>
+        <div class="row" style="margin-top: 10px;">
+          <button class="btn primary" id="copyHoliday">複製公告</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings">
+      <div class="panel">
+        <h2>肉圓與庫存</h2>
+        <div class="grid2">
+          <div>
+            <label for="pricePerGroup">肉圓一組價格</label>
+            <input id="pricePerGroup" inputmode="numeric" type="number" min="0" step="1" value="2100">
+          </div>
+          <div>
+            <label for="meatPackJin">肉一單位幾斤</label>
+            <input id="meatPackJin" inputmode="decimal" type="number" min="0" step="0.5" value="7">
+          </div>
+          <div>
+            <label for="oilPackJin">油一單位幾斤</label>
+            <input id="oilPackJin" inputmode="decimal" type="number" min="0" step="0.5" value="6">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>中盤價格</h2>
+        <div class="grid2">
+          <div>
+            <label for="frontLegPrice">前腿價格</label>
+            <input id="frontLegPrice" inputmode="decimal" type="number" min="0" step="0.1" placeholder="每公斤">
+          </div>
+          <div>
+            <label for="oilPrice">油價格</label>
+            <input id="oilPrice" inputmode="decimal" type="number" min="0" step="0.1" placeholder="每公斤">
+          </div>
+          <div>
+            <label for="bellyPrice">五花肉價格</label>
+            <input id="bellyPrice" inputmode="decimal" type="number" min="0" step="0.1" placeholder="每公斤">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>資料</h2>
+        <div class="row">
+          <button class="btn danger" id="resetAll">全部重來</button>
+        </div>
+        <p class="note">資料存在這台手機的瀏覽器裡。換手機時，可以直接輸入當下庫存和目前未收狀態。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="notice" id="notice"></div>
+
+  <script>
+    const storeKey = "pork-stall-offline-tool-v1";
+    const undoKey = "pork-stall-offline-tool-undo-v1";
+    const state = loadState();
+
+    const els = {
+      todayText: document.getElementById("todayText"),
+      stockMeat: document.getElementById("stockMeat"),
+      stockOil: document.getElementById("stockOil"),
+      meatJin: document.getElementById("meatJin"),
+      oilJin: document.getElementById("oilJin"),
+      orderDate: document.getElementById("orderDate"),
+      orderGroups: document.getElementById("orderGroups"),
+      payDate: document.getElementById("payDate"),
+      payAmount: document.getElementById("payAmount"),
+      totalGroups: document.getElementById("totalGroups"),
+      grossDue: document.getElementById("grossDue"),
+      paidAmount: document.getElementById("paidAmount"),
+      netDue: document.getElementById("netDue"),
+      debtStatus: document.getElementById("debtStatus"),
+      undoAction: document.getElementById("undoAction"),
+      ledgerList: document.getElementById("ledgerList"),
+      pricePerGroup: document.getElementById("pricePerGroup"),
+      meatPackJin: document.getElementById("meatPackJin"),
+      oilPackJin: document.getElementById("oilPackJin"),
+      holidayName: document.getElementById("holidayName"),
+      holidayStart: document.getElementById("holidayStart"),
+      holidayStartWeek: document.getElementById("holidayStartWeek"),
+      holidayEnd: document.getElementById("holidayEnd"),
+      holidayDays: document.getElementById("holidayDays"),
+      holidayEndWeek: document.getElementById("holidayEndWeek"),
+      lastBusiness: document.getElementById("lastBusiness"),
+      reopenDate: document.getElementById("reopenDate"),
+      holidayLine: document.getElementById("holidayLine"),
+      frontLegKg: document.getElementById("frontLegKg"),
+      oilKg: document.getElementById("oilKg"),
+      bellyPieces: document.getElementById("bellyPieces"),
+      frontLegPrice: document.getElementById("frontLegPrice"),
+      oilPrice: document.getElementById("oilPrice"),
+      bellyPrice: document.getElementById("bellyPrice"),
+      frontLegTotal: document.getElementById("frontLegTotal"),
+      oilTotal: document.getElementById("oilTotal"),
+      bellyTotal: document.getElementById("bellyTotal"),
+      supplierTotal: document.getElementById("supplierTotal"),
+      calcExpression: document.getElementById("calcExpression"),
+      calcResult: document.getElementById("calcResult"),
+      notice: document.getElementById("notice")
+    };
+
+    init();
+
+    function init() {
+      els.todayText.textContent = formatLongDate(new Date());
+      setDefaultDates();
+      bindTabs();
+      bindInputs();
+      fillFromState();
+      render();
+    }
+
+    function loadState() {
+      const base = {
+        stockMeat: "",
+        stockOil: "",
+        pricePerGroup: 2100,
+        meatPackJin: 7,
+        oilPackJin: 6,
+        orders: [],
+        payments: [],
+        holidayName: "端午節",
+        holidayStart: "6/19",
+        holidayStartWeek: "週五",
+        holidayEnd: "6/25",
+        holidayDays: "7",
+        holidayEndWeek: "週四",
+        lastBusiness: "6/18",
+        reopenDate: "6/26",
+        frontLegKg: "",
+        oilKg: "",
+        bellyPieces: "",
+        frontLegPrice: "",
+        oilPrice: "",
+        bellyPrice: "",
+        calcExpression: ""
+      };
+      try {
+        return Object.assign(base, JSON.parse(localStorage.getItem(storeKey) || "{}"));
+      } catch (error) {
+        return base;
+      }
+    }
+
+    function save() {
+      localStorage.setItem(storeKey, JSON.stringify(state));
+    }
+
+    function fillFromState() {
+      Object.keys(els).forEach((key) => {
+        if (key in state && els[key] && "value" in els[key]) {
+          els[key].value = state[key];
+        }
+      });
+    }
+
+    function bindTabs() {
+      document.querySelectorAll(".tab").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".tab").forEach((tab) => tab.classList.remove("active"));
+          document.querySelectorAll("section").forEach((section) => section.classList.remove("active"));
+          button.classList.add("active");
+          document.getElementById(button.dataset.tab).classList.add("active");
+        });
+      });
+    }
+
+    function bindInputs() {
+      [
+        "stockMeat",
+        "stockOil",
+        "pricePerGroup",
+        "meatPackJin",
+        "oilPackJin",
+        "holidayName",
+        "holidayStart",
+        "holidayStartWeek",
+        "holidayEnd",
+        "holidayDays",
+        "holidayEndWeek",
+        "lastBusiness",
+        "reopenDate",
+        "frontLegKg",
+        "oilKg",
+        "bellyPieces",
+        "frontLegPrice",
+        "oilPrice",
+        "bellyPrice",
+        "calcExpression"
+      ].forEach((key) => {
+        els[key].addEventListener("input", () => {
+          state[key] = els[key].value;
+          save();
+          render();
+        });
+      });
+
+      document.getElementById("addOrder").addEventListener("click", addOrder);
+      document.getElementById("addPayment").addEventListener("click", addPayment);
+      document.getElementById("undoAction").addEventListener("click", undoLastAction);
+      document.getElementById("copyHoliday").addEventListener("click", () => copyText(els.holidayLine.value));
+      document.getElementById("resetAll").addEventListener("click", resetAll);
+    }
+
+    function addOrder() {
+      const date = cleanDate(els.orderDate.value);
+      const groups = num(els.orderGroups.value);
+      if (!date || groups <= 0) {
+        showNotice("請輸入日期和組數");
+        return;
+      }
+      state.orders.push({ id: uid(), date, groups });
+      els.orderGroups.value = "";
+      save();
+      render();
+      showNotice("已加入訂貨");
+    }
+
+    function addPayment() {
+      const date = cleanDate(els.payDate.value);
+      const amount = Math.round(num(els.payAmount.value));
+      if (!date || amount <= 0) {
+        showNotice("請輸入日期和金額");
+        return;
+      }
+      state.payments.push({ id: uid(), date, amount });
+      els.payAmount.value = "";
+      save();
+      render();
+      showNotice("已插入收款");
+    }
+
+    function resetAll() {
+      if (!confirm("確定全部重來？庫存、欠款、收款都會清空。")) return;
+      localStorage.removeItem(storeKey);
+      location.reload();
+    }
+
+    function render() {
+      const price = num(state.pricePerGroup);
+      const meatUnits = num(state.stockMeat);
+      const oilUnits = num(state.stockOil);
+      const meatPack = num(state.meatPackJin);
+      const oilPack = num(state.oilPackJin);
+      const totalGroups = state.orders.reduce((sum, row) => sum + num(row.groups), 0);
+      const gross = totalGroups * price;
+      const paid = state.payments.reduce((sum, row) => sum + num(row.amount), 0);
+      const net = gross - paid;
+
+      els.meatJin.textContent = `${fmt(meatUnits * meatPack)}斤`;
+      els.oilJin.textContent = `${fmt(oilUnits * oilPack)}斤`;
+      els.totalGroups.textContent = `${fmt(totalGroups)}組`;
+      els.grossDue.textContent = money(gross);
+      els.paidAmount.textContent = money(paid);
+      els.netDue.textContent = money(net);
+      els.debtStatus.textContent = net > 0 ? `目前還欠 ${money(net)}` : net < 0 ? `目前多收 ${money(Math.abs(net))}` : "目前沒有欠款";
+      els.debtStatus.className = net > 0 ? "status warn" : "status";
+
+      const frontLegTotal = num(state.frontLegKg) * num(state.frontLegPrice);
+      const oilTotal = num(state.oilKg) * num(state.oilPrice);
+      const bellyTotal = num(state.bellyPieces) * num(state.bellyPrice);
+      const supplierTotal = frontLegTotal + oilTotal + bellyTotal;
+      els.frontLegTotal.textContent = money(frontLegTotal);
+      els.oilTotal.textContent = money(oilTotal);
+      els.bellyTotal.textContent = money(bellyTotal);
+      els.supplierTotal.textContent = money(supplierTotal);
+      els.calcResult.textContent = calculateExpression(state.calcExpression);
+      els.holidayLine.value = holidayMessage();
+
+      updateUndoButton();
+      renderLedger();
+    }
+
+    function renderLedger() {
+      els.ledgerList.innerHTML = "";
+      const events = [
+        ...state.orders.map((row) => ({ type: "order", sort: dateSortValue(row.date), row })),
+        ...state.payments.map((row) => ({ type: "payment", sort: dateSortValue(row.date), row }))
+      ].sort((a, b) => {
+        if (a.sort !== b.sort) return a.sort - b.sort;
+        if (a.type !== b.type) return a.type === "order" ? -1 : 1;
+        return String(a.row.id).localeCompare(String(b.row.id));
+      });
+
+      if (!events.length) {
+        const div = document.createElement("div");
+        div.className = "note";
+        div.textContent = "還沒有對帳紀錄";
+        els.ledgerList.appendChild(div);
+        return;
+      }
+
+      let batch = [];
+      events.forEach((event) => {
+        if (event.type === "order") {
+          batch.push(event.row);
+          return;
+        }
+        if (batch.length) {
+          appendBatch(batch, event.row);
+          batch = [];
+        } else {
+          appendPaymentOnly(event.row);
+        }
+      });
+      if (batch.length) appendOpenBatch(batch);
+    }
+
+    function appendBatch(orders, payment) {
+      const price = num(state.pricePerGroup);
+      const groups = orders.reduce((sum, row) => sum + num(row.groups), 0);
+      const total = groups * price;
+      const remain = total - num(payment.amount);
+      const div = document.createElement("div");
+      div.className = "batch pay";
+      const rangeText = orders[0].date === orders[orders.length - 1].date ? orders[0].date : `${orders[0].date}-${orders[orders.length - 1].date}`;
+      div.innerHTML = `
+        <div class="batch-head">
+          <div>
+            <strong>${rangeText}　${fmt(groups)}組</strong>
+            <span>${fmt(groups)}組 × ${money(price)} = ${money(total)}</span>
+          </div>
+          <button class="btn small" data-settle-batch="${payment.id}">結清此段</button>
+        </div>
+        <div class="batch-lines"></div>
+      `;
+      const lines = div.querySelector(".batch-lines");
+      orders.forEach((row) => lines.appendChild(orderLine(row, price)));
+      const payLine = document.createElement("div");
+      payLine.className = "line-row";
+      payLine.innerHTML = `<div><strong>${payment.date}　收 ${money(payment.amount)}</strong><span>${remain >= 0 ? `此段餘 ${money(remain)}` : `此段多收 ${money(Math.abs(remain))}`}</span></div><button class="btn small" data-del-payment="${payment.id}">刪</button>`;
+      lines.appendChild(payLine);
+      div.querySelector("[data-settle-batch]").addEventListener("click", () => settleBatch(orders, payment));
+      payLine.querySelector("[data-del-payment]").addEventListener("click", () => removeRow("payments", payment.id));
+      els.ledgerList.appendChild(div);
+    }
+
+    function appendOpenBatch(orders) {
+      const price = num(state.pricePerGroup);
+      const groups = orders.reduce((sum, row) => sum + num(row.groups), 0);
+      const total = groups * price;
+      const div = document.createElement("div");
+      div.className = "batch open";
+      div.innerHTML = `
+        <div class="batch-head">
+          <div>
+            <strong>尚未收款　${fmt(groups)}組</strong>
+            <span>${money(total)}</span>
+          </div>
+        </div>
+        <div class="batch-lines"></div>
+      `;
+      const lines = div.querySelector(".batch-lines");
+      orders.forEach((row) => lines.appendChild(orderLine(row, price)));
+      els.ledgerList.appendChild(div);
+    }
+
+    function appendPaymentOnly(payment) {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `<div><strong>${payment.date}　收 ${money(payment.amount)}</strong><span>未對到前方訂貨</span></div><button class="btn small">刪</button>`;
+      div.querySelector("button").addEventListener("click", () => removeRow("payments", payment.id));
+      els.ledgerList.appendChild(div);
+    }
+
+    function orderLine(row, price) {
+      const line = document.createElement("div");
+      line.className = "line-row";
+      line.innerHTML = `<div><strong>${row.date}　${fmt(row.groups)}組</strong><span>${money(num(row.groups) * price)}</span></div><button class="btn small">刪</button>`;
+      line.querySelector("button").addEventListener("click", () => removeRow("orders", row.id));
+      return line;
+    }
+
+    function removeRow(type, id) {
+      rememberUndo("刪除前");
+      state[type] = state[type].filter((row) => row.id !== id);
+      save();
+      render();
+    }
+
+    function settleBatch(orders, payment) {
+      const rangeText = orders[0].date === orders[orders.length - 1].date ? orders[0].date : `${orders[0].date}-${orders[orders.length - 1].date}`;
+      if (!confirm(`確定結清 ${rangeText} 這一段？\n這只會刪除這段訂貨和 ${payment.date} 收款，不會刪到後面的未收。`)) return;
+      rememberUndo("結清前");
+      const orderIds = new Set(orders.map((row) => row.id));
+      state.orders = state.orders.filter((row) => !orderIds.has(row.id));
+      state.payments = state.payments.filter((row) => row.id !== payment.id);
+      save();
+      render();
+      showNotice("已結清此段");
+    }
+
+    function rememberUndo(label) {
+      localStorage.setItem(undoKey, JSON.stringify({
+        label,
+        state: JSON.parse(JSON.stringify(state))
+      }));
+      updateUndoButton();
+    }
+
+    function undoLastAction() {
+      const undo = loadUndo();
+      if (!undo) {
+        showNotice("沒有可以還原的動作");
+        return;
+      }
+      Object.keys(state).forEach((key) => delete state[key]);
+      Object.assign(state, undo.state);
+      save();
+      localStorage.removeItem(undoKey);
+      fillFromState();
+      render();
+      showNotice("已還原上一步");
+    }
+
+    function loadUndo() {
+      try {
+        return JSON.parse(localStorage.getItem(undoKey) || "null");
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function updateUndoButton() {
+      const undo = loadUndo();
+      els.undoAction.hidden = !undo;
+      els.undoAction.textContent = undo ? `還原上一步` : "還原上一步";
+    }
+
+    function calculateExpression(value) {
+      const text = String(value || "").trim().replace(/[x×]/g, "*");
+      if (!text) return "0";
+      if (!/^[0-9+\-*/().\s]+$/.test(text)) return "錯誤";
+      try {
+        const result = parseCalc(text);
+        if (!Number.isFinite(result)) return "錯誤";
+        return Number.isInteger(result) ? String(result) : String(Math.round(result * 100) / 100);
+      } catch (error) {
+        return "錯誤";
+      }
+    }
+
+    function parseCalc(text) {
+      let index = 0;
+      function peek() {
+        while (text[index] === " ") index += 1;
+        return text[index];
+      }
+      function eat(char) {
+        if (peek() === char) {
+          index += 1;
+          return true;
+        }
+        return false;
+      }
+      function number() {
+        if (eat("+")) return number();
+        if (eat("-")) return -number();
+        if (eat("(")) {
+          const value = expression();
+          if (!eat(")")) throw new Error("missing )");
+          return value;
+        }
+        let start = index;
+        while (/[0-9.]/.test(text[index] || "")) index += 1;
+        if (start === index) throw new Error("number");
+        const raw = text.slice(start, index);
+        if ((raw.match(/\./g) || []).length > 1) throw new Error("dot");
+        return Number(raw);
+      }
+      function term() {
+        let value = number();
+        while (true) {
+          if (eat("*")) value *= number();
+          else if (eat("/")) value /= number();
+          else return value;
+        }
+      }
+      function expression() {
+        let value = term();
+        while (true) {
+          if (eat("+")) value += term();
+          else if (eat("-")) value -= term();
+          else return value;
+        }
+      }
+      const result = expression();
+      if (peek() !== undefined) throw new Error("extra");
+      return result;
+    }
+
+    function holidayMessage() {
+      const name = state.holidayName || "假期";
+      const start = state.holidayStart || "";
+      const startWeek = state.holidayStartWeek || "";
+      const end = state.holidayEnd || "";
+      const endWeek = state.holidayEndWeek || "";
+      const days = state.holidayDays || "";
+      const last = state.lastBusiness || "";
+      const reopen = state.reopenDate || "";
+      return [
+        `今年${name}假期為${start}（${startWeek}）-${end}（${endWeek}）${days ? `共${days}天` : ""}`,
+        `${last}最後一天營業`,
+        `${reopen}開始營業`,
+        "謝謝"
+      ].join("\n");
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showNotice("已複製");
+      } catch (error) {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const temp = document.createElement("textarea");
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      showNotice("已複製");
+    }
+
+    function setDefaultDates() {
+      const now = new Date();
+      els.orderDate.value = shortDate(now);
+      els.payDate.value = shortDate(now);
+    }
+
+    function shortDate(date) {
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    }
+
+    function cleanDate(value) {
+      return String(value || "").trim();
+    }
+
+    function dateSortValue(value) {
+      const text = String(value || "").trim();
+      const match = text.match(/^(\d{1,2})[\/.-](\d{1,2})$/);
+      if (!match) return Number.MAX_SAFE_INTEGER;
+      return Number(match[1]) * 100 + Number(match[2]);
+    }
+
+    function formatLongDate(date) {
+      const week = ["日", "一", "二", "三", "四", "五", "六"][date.getDay()];
+      return `${date.getMonth() + 1}月${date.getDate()}日 星期${week}`;
+    }
+
+    function num(value) {
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function fmt(value) {
+      if (!Number.isFinite(value)) return "0";
+      return Number.isInteger(value) ? String(value) : String(Math.round(value * 10) / 10);
+    }
+
+    function money(value) {
+      return `$${Math.round(value).toLocaleString("zh-TW")}`;
+    }
+
+    function uid() {
+      return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    }
+
+    function showNotice(text) {
+      els.notice.textContent = text;
+      els.notice.classList.add("show");
+      clearTimeout(showNotice.timer);
+      showNotice.timer = setTimeout(() => els.notice.classList.remove("show"), 1600);
+    }
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="豬肉攤">
+  <meta name="theme-color" content="#f7f2ea">
+  <title>豬肉攤每日小工具</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f2ea;
+      --panel: #fffaf2;
+      --line: #ded2c2;
+      --text: #231f1b;
+      --muted: #74695d;
+      --accent: #b9432f;
+      --ok: #1e6b47;
+      --warn: #9a5a00;
+      --blue: #315c86;
+      --shadow: 0 10px 24px rgba(73, 49, 29, .11);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .app {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 18px 14px 32px;
+    }
+
+    header {
+      padding: 10px 2px 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 27px;
+      letter-spacing: 0;
+    }
+
+    .today {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 6px;
       padding: 8px 0 10px;
