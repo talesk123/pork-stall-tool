@@ -63,7 +63,7 @@ function fallbackCopy(text){const temp=document.createElement("textarea");temp.v
 function setDefaultDates(){const now=new Date;els.orderDate.value=shortDate(now);els.payDate.value=shortDate(now)}
 function shortDate(date){return String(date.getMonth()+1)+"/"+String(date.getDate())}
 function cleanDate(value){return String(value||"").trim()}
-function dateSortValue(value){const match=String(value||"").trim().match(/^(d{1,2})[/.-](d{1,2})$/);if(!match)return Number.MAX_SAFE_INTEGER;return Number(match[1])*100+Number(match[2])}
+function dateSortValue(value){const match=String(value||"").trim().match(/^(\d{1,2})[/.-](\d{1,2})$/);if(!match)return Number.MAX_SAFE_INTEGER;return Number(match[1])*100+Number(match[2])}
 function formatLongDate(date){const week=["日","一","二","三","四","五","六"][date.getDay()];return String(date.getMonth()+1)+"月"+String(date.getDate())+"日 星期"+week}
 function num(value){const parsed=Number(value);return Number.isFinite(parsed)?parsed:0}
 function fmt(value){if(!Number.isFinite(value))return"0";return Number.isInteger(value)?String(value):String(Math.round(value*10)/10)}
